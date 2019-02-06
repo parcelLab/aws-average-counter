@@ -1,0 +1,29 @@
+{
+  "name": "aws-loop-timer",
+  "version": "0.0.1",
+  "description": "Logging Node.js averages to CloudWatch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parcelLab/aws-loop-timer.git"
+  },
+  "keywords": [
+    "aws",
+    "cloudwatch",
+    "awscloudwatch",
+    "performance"
+  ],
+  "author": "Julian Krenge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parcelLab/aws-average-counter/issues"
+  },
+  "homepage": "https://github.com/parcelLab/ws-average-counter#readme",
+  "dependencies": {
+    "aws-sdk": "^2.4.9",
+    "underscore": "^1.8.3"
+  }
+}
