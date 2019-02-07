@@ -42,7 +42,7 @@ function AverageCounter(name, pulse, isSilent) {
  * @param  {Boolean} isAverageValue defines whether this is an average value
  */
 function print(name, average) {
-  var log = name + ' on ' + os.hostname() + ': ' + average;
+  var log = '🧮  ' + name + ' on ' + os.hostname() + ': ' + average;
   console.log(log);
 }
 
@@ -85,12 +85,13 @@ AverageCounter.prototype.pushPulseToCloudWatch = function () {
 
     // calc
     var average = null;
-    if (_this.values && _.isArray(_this.values) && _this.values.length === 0) {
-      average = _this.values.reduce((p, c) => p + c, 0) / _this.values.length;
+    if (_this.values && _.isArray(_this.values) && _this.values.length > 0) {
+      var sum = _this.values.reduce((total, num) => total + num, 0);
+      average = sum / _this.values.length;
     }
 
     // inform
-    if (_this.values.length > 0) {
+    if (_this.values.length > 0 && average && !isNaN(average)) {
       if (!this.isSilent) print(_this.name, average);
       uploadMetricToCloudWatch(_this.name, average);
     }
