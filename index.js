@@ -60,6 +60,10 @@ function uploadMetricToCloudWatch(metric, value) {
         Timestamp: new Date(),
         Unit: 'Count',
         Value: value,
+        Dimensions: [{
+          Name: 'AverageCounter',
+          Value: metric,
+        }],
       },
     ],
     Namespace: 'AverageCounter/' + namespace,
