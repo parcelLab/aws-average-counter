@@ -117,9 +117,9 @@ function getAverageCounter(name, pulse, silent) {
   if (_.isUndefined(pulse)) pulse = 0;
   var writeResultsToLog = _.isUndefined(silent) || silent === false;
 
-  var AverageCounter = new AverageCounter(name, pulse, !writeResultsToLog);
-  if (AverageCounter.pulse > 0) AverageCounter.pushPulseToCloudWatch();
-  return AverageCounter;
+  var averageCounter = new AverageCounter(name, pulse, !writeResultsToLog);
+  if (averageCounter.pulse > 0) averageCounter.pushPulseToCloudWatch();
+  return averageCounter;
 
 }
 
