@@ -84,10 +84,13 @@ AverageCounter.prototype.pushPulseToCloudWatch = function () {
   setTimeout(function () {
 
     // calc
-    var average = this.values.reduce((p, c) => p + c, 0) / this.values.length;
+    var average = null;
+    if (_this.values && _.isArray(_this.values) && _this.values.length === 0) {
+      average = _this.values.reduce((p, c) => p + c, 0) / _this.values.length;
+    }
 
     // inform
-    if (this.values.length > 0) {
+    if (_this.values.length > 0) {
       if (!this.isSilent) print(_this.name, average);
       uploadMetricToCloudWatch(_this.name, average);
     }
