@@ -1,5 +1,5 @@
 {
-  "name": "aws-loop-timer",
+  "name": "aws-average-counter",
   "version": "0.0.1",
   "description": "Logging Node.js averages to CloudWatch",
   "main": "index.js",
