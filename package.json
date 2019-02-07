@@ -1,6 +1,6 @@
 {
   "name": "aws-average-counter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Logging Node.js averages to CloudWatch",
   "main": "index.js",
   "scripts": {
